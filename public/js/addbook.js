@@ -79,9 +79,16 @@ function changeImage(input) {
 
     reader.onload = function(e) {
       preview.setAttribute('src', e.target.result);
+      let formData = new FormData();
+        formData.append("photo",input.files[0]);
+        fetch('../public/images',{method:"POST",body:formData})
+        .catch(er=>{
+            console.error(er)
+        });
+        
     }
-
     reader.readAsDataURL(input.files[0]);
+
   }
 }
 

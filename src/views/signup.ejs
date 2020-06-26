@@ -41,32 +41,41 @@
             </div>
             <div class="row">
                 <div class="col-md-4 offset-md-4">
-                    <form class="mb-5" action="login" id="frmsignup" id="frmsignup">
+                    <form class="mb-5" action="/auth/adduser" id="frmsignup" id="frmsignup" method="POST">
+                        <div class="form-group">
+                            <label>User Type<span class="text-danger">*</span></label>
+                            <label for="errorusertype" id="errorusertype"></label>
+                            <select class="form-control" name="type" id="type">
+                                <option value="student" selected>Student</option>
+                                <option value="admin">Admin</option>
+                              </select>                              
+                        </div>
+                        
                         <div class="form-group">
                             <label>First Name<span class="text-danger">*</span></label>
                             <label for="errorfirstname" id="errorfirstname"></label>
-                            <input type="text" class="form-control" id="firstname">
+                            <input type="text" class="form-control" id="firstname" name="firstname">
                         </div>
                         <div class="form-group">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" id="lastname">
+                            <input type="text" class="form-control" id="lastname" name="lastname">
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
                             <label for="errorphonenumber" id="errorphonenumber"></label>
-                            <input type="text" class="form-control" id="phonenumber">
+                            <input type="text" class="form-control" id="phonenumber" name="phonenumber">
                         </div>
                         <div class="form-group">
                             <label for="email">Email address<span class="text-danger">*</span></label>
                             <label for="erroremail" id="erroremail"></label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="password">Password<span class="text-danger">*</span></label>
                             <label for="strengthpasswordtext" id="strengthpasswordtext"></label>
                             <meter  id="strengthpassword" value = "" min="0" low="6" high="11" max="15" optimum="15"></meter>                          
                             <label for="errorpassword" id="errorpassword"></label>
-                            <input type="password" class="form-control" id="password">
+                            <input type="password" class="form-control" id="password" name="password">
                             <small id="passwordHelpBlock" class="form-text text-muted">
                                 Your password must be minimum 8 characters long, contain at least one lower case and upper case letters and must contain atleast one number.
                             </small>
@@ -74,11 +83,11 @@
                         <div class="form-group">
                             <label for="passwordRe">Repeat Password<span class="text-danger">*</span></label>
                             <label for="errorpasswordRe" id="errorpasswordRe"></label>
-                            <input type="password" class="form-control" id="passwordRe">
+                            <input type="password" class="form-control" id="passwordRe" name="passwordRe">
                         </div>
                         <div class="form-group form-check">
                             <label for="errorcheckbox" id="errorcheckbox"></label><br>
-                            <input type="checkbox" class="form-check-input" id="check1">
+                            <input type="checkbox" class="form-check-input" id="check1" name="check1">
                             <label class="form-check-label" for="check1">Agree our <a href="#" onclick="return false;">Terms and Policy</a></label>
                             <span class="text-danger">*</span>
                         </div>

@@ -34,11 +34,15 @@
         <div class="container py-3 mb-5 content fixedheight" id="homecontent">
             
             <div class="row bookdetails">
-                <div class="col-4 col-sm-2"><img class="people" src="/images/<%=author.img%>" alt=""></div>
+                <div class="col-4 col-sm-2"><img class="people" src="/images/<%=author.image%>" alt=""></div>
                 <div class="col-8 col-sm-10 bookdiv">
                     <h5 class="bookname"><%=author.title%></h5>
-                    <div class="siteurl"><a href="#"><%=author.book%></a></div>
-                    <div class="timemore"><span class="time"><%=author.genre%></span>.<span class="more"></span></div>                    
+                    <div class="siteurl"><a href="#"><%=author.bestbook%></a></div>
+                    <div class="timemore"><span class="time"><%=author.award%></span>.     
+                    <span class="more"><a href="/addauthor/<%=author._id%>">Edit</a></span>
+                        <span class="more"><a href="/addauthor/delete/<%=author._id%>">Delete</a></span>                                   
+                        <span class="more"><a href="/authors">Back</a></span>
+                    </div>
                 </div>
             </div>
         </div>

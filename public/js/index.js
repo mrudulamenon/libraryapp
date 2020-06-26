@@ -13,8 +13,8 @@
 //       moreText.style.display = "inline";
 //     }
 //   }
-let more = document.getElementsByClassName("more");
-let details = document.getElementsByClassName("details");
+//let more = document.getElementsByClassName("more");
+// let details = document.getElementsByClassName("details");
 let btnmore = document.getElementById("btnmore");
 let homecontent = document.getElementById("homecontent");
 btnmore.addEventListener("click", resizecontent);

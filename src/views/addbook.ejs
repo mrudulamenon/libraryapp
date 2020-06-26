@@ -39,30 +39,30 @@
             </div>
             <div class="row">
                 <div class="col-md-4 offset-md-4">
-                    <form class="mb-5" action="#" id="frmaddbook" id="frmaddbook">
+                    <form class="mb-5" enctype="multipart/form-data" method="POST" action="/addbook/add" id="frmaddbook"/>
                         <div class="form-group">
                             <label>Book Name<span class="text-danger">*</span></label>
                             <label for="errorbookname" id="errorbookname"></label>
-                            <input type="text" class="form-control" id="bookname">
+                            <input type="text" class="form-control" id="bookname" name="bookname">
                         </div>
                         <div class="form-group">
                             <label>Author Name<span class="text-danger">*</span></label>
                             <label for="errorauthorname" id="errorauthorname"></label>
-                            <input type="text" class="form-control" id="authorname">
+                            <input type="text" class="form-control" id="authorname" name="authorname">
                         </div>
                         <div class="form-group">
                             <label for="genre">Genre<span class="text-danger">*</span></label>
                             <label for="errorgenre" id="errorgenre"></label>
-                            <input type="genre" class="form-control" id="genre">
+                            <input type="genre" class="form-control" id="genre" name="genre">
                         </div>
                         <div class="form-group">
-                            <label for="image">Image Upload</label>
-                            
-                        <input type="file" id="filetag">
-                        <img src="" id="preview">
+                            <input type="hidden" name="image" id="image" value="bookDefault.jpg">
+                            <label for="image">Image Upload</label>                            
+                        <input type="file" id="filetag" name="filetag">
+                        <img src="" id="preview" height="100px">
                         </div>
-                        <button class="btn btn-primary btn-block btnsubmit" >Add Book</button>
-                    </form>
+                        <button type="submit" class="btn btn-primary btn-block btnsubmit" >Add Book</button>
+                    </form>                    
                 </div>
             </div>
             
