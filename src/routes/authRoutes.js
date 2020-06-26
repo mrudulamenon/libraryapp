@@ -31,7 +31,25 @@ function router(nav) {
         user.save();
         res.redirect('/auth/login');
     });
+    authRouter.post('/validate', function (req, res) {
+        const email=req.body.email;
+        const password=req.body.password;
+        Userdata.findOne({email:email,password:password},(er,user)=>{
+            if(user){
+                res.redirect('/');
+            }
+            else{
+                res.render("login",{error:"Invalid Authentication",nav});
+            }
 
+
+        })
+       // .then(function(er,user){
+
+        // })
+
+
+    });
     
     return authRouter;
 }

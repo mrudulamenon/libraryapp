@@ -41,17 +41,22 @@
             </div>
             <div class="row">
                 <div class="col-md-4 offset-md-4">
-                    <form class="mb-5" action="index" id="frmlogin">
+                    <form class="mb-5" method="POST" action="/auth/validate" id="frmlogin">
+                        <%if(typeof error !='undefined'){%>
+                            <div class="form-group">
+                                <span class="text-danger"><%=error%></span>
+                              </div>
+                        <%}%>          
                         <div class="form-group">
                           <label for="email">Email address</label>
                           <label for="erroremail" id="erroremail"></label>
-                          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
                           <label for="password">Password</label>
                           <label for="errorpassword" id="errorpassword"></label>
-                          <input type="password" class="form-control" id="password">
+                          <input type="password" class="form-control" id="password" name="password">
                           <small id="passwordHelpBlock" class="form-text text-muted">
                             Your password must be minimum 8 characters long, contain at least one lower case and upper case letters and must contain atleast one number.
                         </small>
